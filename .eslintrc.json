@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "@dmitriyzverev/eslint-config",
+    "@dmitriyzverev/eslint-config/react"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "project": ["tsconfig.root.json"]
+  }
+}

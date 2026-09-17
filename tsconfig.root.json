@@ -1,0 +1,12 @@
+{
+  "extends": "@dmitriyzverev/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["dom", "scripthost", "es2022"],
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react"
+  }
+}

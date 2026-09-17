@@ -1,0 +1,87 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "mainEntryPointFilePath": "<projectFolder>/.package/index.d.ts",
+  "bundledPackages": [],
+  "apiReport": {
+    "enabled": false,
+    "includeForgottenExports": true
+  },
+  "docModel": {
+    "enabled": false,
+    "includeForgottenExports": true
+  },
+  "dtsRollup": {
+    "enabled": false
+  },
+  "tsdocMetadata": {
+    "enabled": false
+  },
+  "messages": {
+    "compilerMessageReporting": {
+      "default": {
+        "logLevel": "error"
+      }
+    },
+    "extractorMessageReporting": {
+      "default": {
+        "logLevel": "error"
+      },
+      "ae-cyclic-inherit-doc": {
+        "logLevel": "error"
+      },
+      "ae-different-release-tags": {
+        "logLevel": "error"
+      },
+      "ae-extra-release-tag": {
+        "logLevel": "error"
+      },
+      "ae-forgotten-export": {
+        "logLevel": "error"
+      },
+      "ae-incompatible-release-tags": {
+        "logLevel": "error"
+      },
+      "ae-internal-missing-underscore": {
+        "logLevel": "none"
+      },
+      "ae-internal-mixed-release-tag": {
+        "logLevel": "error"
+      },
+      "ae-misplaced-package-tag": {
+        "logLevel": "error"
+      },
+      "ae-missing-getter": {
+        "logLevel": "error"
+      },
+      "ae-missing-release-tag": {
+        "logLevel": "error"
+      },
+      "ae-preapproved-bad-release-tag": {
+        "logLevel": "error"
+      },
+      "ae-preapproved-unsupported-type": {
+        "logLevel": "error"
+      },
+      "ae-setter-with-docs": {
+        "logLevel": "error"
+      },
+      "ae-unresolved-inheritdoc-base": {
+        "logLevel": "error"
+      },
+      "ae-unresolved-inheritdoc-reference": {
+        "logLevel": "error"
+      },
+      "ae-unresolved-link": {
+        "logLevel": "error"
+      },
+      "ae-wrong-input-file-type": {
+        "logLevel": "error"
+      }
+    },
+    "tsdocMessageReporting": {
+      "default": {
+        "logLevel": "error"
+      }
+    }
+  }
+}
