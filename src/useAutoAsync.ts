@@ -83,6 +83,11 @@ export const useAutoAsync: UseAutoAsync = (args) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSkipped, variables]);
     React.useEffect(() => {
+        // A useEffect with an empty deps array is not guaranteed to run only once per component's lifetime,
+        // e.g. during hot module reloading. That's why this resets wasAction on "unmount".
+        // See https://github.com/facebook/react/issues/21019#issuecomment-800650091
+        // Only triggers during hot module reloading, which unit tests cannot reproduce.
+        /* v8 ignore next 3 */
         return () => {
             ref.current.wasAction = false;
         };

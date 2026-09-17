@@ -90,6 +90,13 @@ export const useAsync: UseAsync = (args) => {
     }, [isSkipped]);
     React.useEffect(() => {
         return () => {
+            // A useEffect with an empty deps array is not guaranteed to run only once per component's lifetime,
+            // e.g. during hot module reloading this effect can rerun without a real unmount/remount.
+            // That's why this resets the async state on "unmount" instead of only aborting.
+            // See https://github.com/facebook/react/issues/21019#issuecomment-800650091
+            // The isSkipped branch only matters for that HMR rerun (skip after an unmounted start),
+            // a case that also can't be observed through React's public unmount behavior in a unit test.
+            /* v8 ignore else */
             if (!ref.current.isSkipped && ref.current.abort) {
                 setAsyncState(LOADING_ABORT_ASYNC_STATE);
                 ref.current.abort();
