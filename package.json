@@ -35,7 +35,8 @@
     "analyzer:api:check": "npx api-extractor run --local --verbose",
     "formatter:fix": "npx prettier --write \"**/*.{ts,tsx,js,json,yml,md,html}\"",
     "formatter:check": "npx prettier --check \"**/*.{ts,tsx,js,json,yml,md,html}\"",
-    "test": "npx vitest run"
+    "test": "npx vitest run",
+    "test:mutation": "npx stryker run"
   },
   "dependencies": {
     "fast-deep-equal": "^3.1.3"
@@ -49,6 +50,10 @@
     "@dmitriyzverev/prettier-config": "2.0.0",
     "@dmitriyzverev/typescript-config": "1.1.1",
     "@microsoft/api-extractor": "7.59.1",
+    "@stryker-mutator/api": "10.0.0",
+    "@stryker-mutator/core": "10.0.0",
+    "@stryker-mutator/typescript-checker": "10.0.0",
+    "@stryker-mutator/vitest-runner": "10.0.0",
     "@testing-library/react": "16.3.3",
     "@types/node": "24.13.5",
     "@types/react": "19.3.0",
