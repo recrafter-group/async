@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
   "testRunner": "vitest",
-  "plugins": ["@stryker-mutator/*", "./scripts/strykerMarkdownReporter.ts"],
+  "appendPlugins": ["stryker-markdown-reporter"],
   "checkers": ["typescript"],
   "tsconfigFile": "tsconfig.stryker.json",
   "tempDirName": ".stryker/tmp",
@@ -19,6 +19,7 @@
     "fileName": ".stryker/reports/mutation.json"
   },
   "markdownReporter": {
-    "fileName": ".stryker/reports/mutation.md"
+    "fileName": ".stryker/reports/mutation.md",
+    "splitErrors": true
   }
 }
