@@ -15,42 +15,7 @@ jobs:
         uses: recrafter-group/.github/.github/workflows/test.yml@version/2.0.0
     mutation_test:
         name: Mutation test
-        runs-on: ubuntu-22.04
+        uses: recrafter-group/.github/.github/workflows/mutation_test.yml@version/2.1.0
         permissions:
             contents: read
             pull-requests: write
-        steps:
-            - name: Check out Git repository
-              uses: actions/checkout@v4.2.2
-            - name: Set up Node.js
-              uses: actions/setup-node@v4.4.0
-              with:
-                  node-version: 22
-                  cache: npm
-            - name: Install Node.js dependencies
-              run: npm ci
-            - name: Run mutation tests
-              run: npm run test:mutation
-            - name: Upload mutation report
-              id: upload-mutation-report
-              if: ${{ !cancelled() }}
-              uses: actions/upload-artifact@v4.4.3
-              with:
-                  name: mutation-report
-                  path: ./.stryker/reports/
-                  if-no-files-found: error
-                  include-hidden-files: true
-            - name: Build mutation report comment
-              if: ${{ !cancelled() }}
-              run: |
-                  echo '## Mutation testing' > mutation-comment.md
-                  echo '' >> mutation-comment.md
-                  cat .stryker/reports/mutation.md >> mutation-comment.md
-                  echo '' >> mutation-comment.md
-                  echo "[Download report](${{ steps.upload-mutation-report.outputs.artifact-url }})" >> mutation-comment.md
-            - name: Comment mutation report on pull request
-              if: ${{ !cancelled() }}
-              uses: marocchino/sticky-pull-request-comment@v3.0.2
-              with:
-                  header: mutation
-                  path: mutation-comment.md
