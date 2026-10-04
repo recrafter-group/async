@@ -63,6 +63,7 @@
     "jsdom": "30.1.0",
     "prettier": "3.9.7",
     "react": "19.3.0",
+    "stryker-markdown-reporter": "0.1.0",
     "typescript": "5.9.3",
     "vitest": "5.0.1"
   }
